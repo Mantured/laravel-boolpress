@@ -7,7 +7,7 @@ use App\UserInfo;
 use App\Category;
 
 
-class UserInfosTable extends Seeder
+class UserInfosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
