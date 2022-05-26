@@ -1953,6 +1953,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Posts",
@@ -1961,23 +1991,31 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      pagination: {}
     };
   },
   methods: {
-    getPosts: function getPosts() {
+    getPosts: function getPosts(page) {
       var _this = this;
 
-      axios.get("http://localhost:8000/api/posts").then(function (result) {
+      axios.get("http://localhost:8000/api/posts?page=" + page).then(function (result) {
         _this.posts = result.data.results.data;
-        console.log(_this.posts);
+        var _result$data$results = result.data.results,
+            current_page = _result$data$results.current_page,
+            last_page = _result$data$results.last_page;
+        _this.pagination = {
+          currentPage: current_page,
+          lastPage: last_page
+        };
+        console.log(_this.pagination);
       })["catch"](function (error) {
         console.log(error);
       });
     }
   },
   created: function created() {
-    this.getPosts();
+    this.getPosts(1);
   }
 });
 
@@ -2545,14 +2583,66 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row row-cols-1 row-cols-md-3 g-4" },
-    _vm._l(_vm.posts, function (post, index) {
-      return _c("Post", { key: index, attrs: { post: post } })
-    }),
-    1
-  )
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "row row-cols-1 row-cols-md-3 g-4" },
+      _vm._l(_vm.posts, function (post, index) {
+        return _c("Post", { key: index, attrs: { post: post } })
+      }),
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("nav", { attrs: { "aria-label": "Page navigation" } }, [
+          _c("ul", { staticClass: "pagination" }, [
+            _vm.pagination.currentPage > 1
+              ? _c(
+                  "li",
+                  {
+                    staticClass: "page-item",
+                    on: {
+                      click: function ($event) {
+                        return _vm.getPosts(_vm.pagination.currentPage - 1)
+                      },
+                    },
+                  },
+                  [_c("p", { staticClass: "page-link" }, [_vm._v("Previous")])]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("li", { staticClass: "page-item" }, [
+              _c("p", { staticClass: "page-link" }, [
+                _vm._v(
+                  "\n                            " +
+                    _vm._s(_vm.pagination.currentPage) +
+                    "\n                        "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("li"),
+            _vm._v(" "),
+            _vm.pagination.currentPage < _vm.pagination.lastPage
+              ? _c(
+                  "li",
+                  {
+                    staticClass: "page-item",
+                    on: {
+                      click: function ($event) {
+                        return _vm.getPosts(_vm.pagination.currentPage + 1)
+                      },
+                    },
+                  },
+                  [_c("p", { staticClass: "page-link" }, [_vm._v("Next")])]
+                )
+              : _vm._e(),
+          ]),
+        ]),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
