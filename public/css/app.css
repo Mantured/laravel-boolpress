@@ -11262,3 +11262,46 @@ main .my-height {
 .show-height img {
   height: 45vh;
 }
+
+div.guest-home {
+  background-color: #fff;
+  color: #636b6f;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  height: 8vh;
+  margin: 0;
+}
+div.guest-home .full-height {
+  height: 100vh;
+}
+div.guest-home .flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+div.guest-home .position-ref {
+  position: relative;
+}
+div.guest-home .top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+div.guest-home .content {
+  text-align: center;
+}
+div.guest-home .title {
+  font-size: 84px;
+}
+div.guest-home .links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+div.guest-home .m-b-md {
+  margin-bottom: 30px;
+}
