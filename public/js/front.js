@@ -2036,6 +2036,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AboutUs"
 });
@@ -2051,6 +2057,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2759,7 +2771,12 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [_c("router-view")], 1)
+  return _c(
+    "div",
+    { staticClass: "container-fluid text-center" },
+    [_c("router-view")],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2836,9 +2853,24 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("Miao")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("img", {
+        staticClass: "img-fluid",
+        attrs: {
+          src: "https://best5.it/b5/wp-content/uploads/2018/07/La-storia-dello-zio-Sam2-800x400.jpg",
+          alt: "zio sem want u",
+        },
+      }),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -2860,9 +2892,24 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("Bau")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", {}, [
+      _c("img", {
+        staticClass: "img-fluid",
+        attrs: {
+          src: "https://www.winemeridian.com/panel/lib/timthumb.php?src=/upload/articoli/2896/big/questa-casa-non-albergo.jpg&w=738&h=428&zc=2",
+          alt: " questa casa non e'una albergo",
+        },
+      }),
+    ])
+  },
+]
 render._withStripped = true
 
 
