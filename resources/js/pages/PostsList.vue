@@ -1,5 +1,7 @@
 <template>
     <div>
+        <div class="col-12"></div>
+
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <Post v-for="(post, index) in posts" :key="index" :post="post" />
         </div>
@@ -35,9 +37,9 @@
 </template>
 
 <script>
-import Post from "./Post.vue";
+import Post from "../components/Post.vue";
 export default {
-    name: "Posts",
+    name: "Postslist",
     components: {
         Post,
     },
